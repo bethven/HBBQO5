@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ $# -ne 1 ]; then
   echo "Uso: $0 <nombre-archivo-csv>"
   exit 1
