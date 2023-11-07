@@ -44,6 +44,28 @@ Tasca1-1() {
   read -n 1 -s
 }
 
+Tasca1-2() {
+  clear
+  echo "*************** HBBQO: Catàleg cronològic de pel·lícules (de més modernes a més antigues): ********************"
+  echo "*****************************************************************************"
+
+  ./Tasca1-2.sh $base_de_datos
+
+  echo "Presiona ENTER para continuar..."
+  read -n 1 -s
+}
+
+Tasca1-3() {
+  clear
+  echo "*************** HBBQO: Catàleg de pel·lícules per valoració d'usuaris (de més alta a més baixa):********************"
+  echo "*****************************************************************************"
+
+  ./Tasca1-3.sh $base_de_datos
+
+  echo "Presiona ENTER para continuar..."
+  read -n 1 -s
+}
+
 
 
 
