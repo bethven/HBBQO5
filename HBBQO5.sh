@@ -66,6 +66,62 @@ Tasca1-3() {
   read -n 1 -s
 }
 
+opcioNoValida() {
+  echo "Opción incorrecta, debe ser un valor de 0 a 4"
+  sleep 2
+  clear
+}
+
+opcio=1
+
+while [ $opcio -ne 0 ]; do
+  clear
+
+  echo "----------------------------------"
+  echo "Base de Datos del Catálogo de HBBQO"
+  echo "----------------------------------"
+  echo "1.- Llistats de les pel·lícules del catàleg."
+  echo "2.- Cerca d’una pel·lícula al catàleg."
+  echo "3.- Joc de preguntes sobre les pel·lícules."
+  echo "4.- Gestió de la base de dades de pel·lícules."
+  echo "0.- Sortir"
+  echo -n "Escull una opcio: "
+  read opcio
+
+  case $opcio in
+    1)
+      subopcion=1  # Reinicializa subopcion antes de mostrar el submenú
+      while [ $subopcion -ne 0 ]; do
+        menuListadosPeliculas
+        case $subopcion in
+          1) Tasca1-1 ;;
+          2) Tasca1-2 ;;
+          3) Tasca1-3 ;;
+          0) ;;
+          *) opcioNoValida ;;
+        esac
+
+        if [ $subopcion != 0 ]; then
+          echo "Presiona ENTER para volver al menú anterior..."
+          read -n 1 -s
+        fi
+      done
+      ;;
+    2) enDesarrollo ;;
+    3) enDesarrollo ;;
+    4) enDesarrollo ;;
+    0)
+      echo "Gràcies per la vostra visita a HBBQO..."
+      sleep 2
+      ;;
+    *) opcioNoValida ;;
+  esac
+
+  if [ $opcio -ne 0 ]; then
+    echo "Presiona ENTER para continuar"
+    read tecla
+  fi
+done
 
 
 
