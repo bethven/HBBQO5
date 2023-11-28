@@ -3,26 +3,7 @@
 
 
 
-while [ $tornar -eq 0 ]; do
-
-if [ $# -eq 2 ]; then
-    echo "Us: $0 <fitxer> <Cadena> i <any>"
-    exit 1
-fi
-fitxer=$1
-cadena="$2"
-any=$3
-
-titol_previ=""
-grep "$cadena " $fitxer | grep "$any" | sort -k1 > CadenaIAny.txt
-
-  if [ ! -s CadenaIAny.txt ]; then
-    echo "*********************************************************"
-    echo "Pel·lícula no trobada"
-    echo "*********************************************************"
-  else
-    echo "*********************************************************"
-    while IFS=, read -r titol level descripcio any val_usu mida_mostra; do
+, read -r titol level descripcio any val_usu mida_mostra; do
      if [ "$titol" != "$titol_previ" ];
     then
       echo "*Títol: $titol" 
