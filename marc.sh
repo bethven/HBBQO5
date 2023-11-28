@@ -1,6 +1,8 @@
 #!/bin/bash
  tornar=0
 
+
+
 while [ $tornar -eq 0 ]; do
 
 if [ $# -eq 2 ]; then
